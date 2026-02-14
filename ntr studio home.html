@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* NAVBAR MAIN */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* LOGO */
+nav .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff4d4d;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* NAV LINKS */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff4d4d;
+}
+
+/* HAMBURGER ICON */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff4d4d;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+
+    nav {
+        padding: 18px 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+*{
+            font-family: 'Poppins', sans-serif;
+        }
+    /* Center Wrapper */
+.center-btn {
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Original Button Style */
+.back-home {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ff4d4d;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.back-home:hover {
+    background: #ff4d4d;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .back-home {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}  
+
+  
+    :root{
+      --accent:#ff4d4d;
+      --dark:#0f1724;
+      --muted:#9aa4ad;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Poppins",sans-serif;background:#f4f6f8;color:#0f1724}
+
+    /* NAVBAR */
+    nav{display:flex;justify-content:space-between;align-items:center;padding:18px 36px;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.08);position:sticky;top:0;z-index:50}
+    .logo{font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:1px;color:var(--accent);font-size:26px}
+    .menu-icon{display:none;font-size:28px;cursor:pointer;color:var(--accent)}
+    ul#navLinks{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+    ul#navLinks a{text-decoration:none;color:#111;font-weight:600;transition:color .2s}
+    ul#navLinks a:hover{color:var(--accent)}
+
+    @media(max-width:900px){
+      .menu-icon{display:block}
+      ul#navLinks{display:none;position:fixed;top:68px;right:-100%;width:64%;height:100vh;background:#fff;flex-direction:column;padding-top:30px;gap:18px;box-shadow:0 10px 30px rgba(0,0,0,0.08);transition:right .35s}
+      ul#navLinks.open{right:0}
+      ul#navLinks li{text-align:center}
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:72vh;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+
+    .media{position:absolute;inset:0}
+    .hero video,.hero .bg-img{
+      width:100%;height:100%;object-fit:cover;
+    }
+    
+
+    /* animated overlay */
+    .hero::after{
+      content:"";position:absolute;inset:0;
+      background:rgba(0,0,0,0.35);
+      animation: fadeOverlay 2.5s ease forwards;
+    }
+
+    @keyframes fadeOverlay{
+      from{background:rgba(0,0,0,0.75)}
+      to{background:rgba(0,0,0,0.35)}
+    }
+
+    .hero-content{
+      position:relative;z-index:5;text-align:center;color:#fff;padding:28px;
+      animation:fadeSlide 1.2s ease both;
+    }
+
+    @keyframes fadeSlide{
+      from{opacity:0;transform:translateY(30px) scale(0.95)}
+      to{opacity:1;transform:translateY(0) scale(1)}
+    }
+
+    /* Studio Name Animated */
+    .studio-name{
+      font-family:'Montserrat',sans-serif;font-weight:800;font-size:48px;margin:0;letter-spacing:2px;
+      animation:zoomIn 1.2s ease both;
+    }
+
+    @keyframes zoomIn{
+      from{opacity:0;transform:scale(0.7)}
+      to{opacity:1;transform:scale(1)}
+    }
+
+    /* Typing Effect */
+    .tagline{
+      margin:12px 0 22px;font-size:18px;color:#eee;
+      overflow:hidden;border-right:2px solid #fff;
+      white-space:nowrap;width:0;
+      animation:typing 3s steps(40) forwards, blink .6s infinite;
+    }
+    @keyframes typing{from{width:0} to{width:390px}}
+    @keyframes blink{50%{border-color:transparent}}
+
+    /* Buttons */
+    .btn{
+      background:var(--accent);color:#fff;padding:14px 26px;border-radius:30px;border:none;font-weight:700;
+      cursor:pointer;text-decoration:none;display:inline-block;
+      animation:bounceBtn 1.8s ease infinite;
+    }
+    @keyframes bounceBtn{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-6px)}
+    }
+
+    /* BELOW SECTION */
+    .below{max-width:1100px;margin:40px auto;padding:0 20px;text-align:center}
+
+    .services{
+      display:flex;gap:20px;flex-wrap:wrap;justify-content:center;
+    }
+
+    .service-card{
+      width:260px;background:#fff;border-radius:14px;padding:20px;
+      transition:.4s;cursor:pointer;border:3px solid transparent;
+      box-shadow:0 8px 18px rgba(0,0,0,0.08);
+    }
+
+    /* HOVER effect for 3 image/cards */
+    .service-card:hover{
+      transform:translateY(-10px) scale(1.03);
+      border-color:var(--accent);
+      box-shadow:0 18px 38px rgba(255,77,77,0.35);
+      background:linear-gradient(160deg,#fff,#ffe6e6);
+    }
+
+    .service-card img{
+      width:100%;border-radius:10px;margin-bottom:14px;
+      transition:.4s;
+    }
+
+    .service-card:hover img{
+      transform:scale(1.07);
+      filter:brightness(1.1);
+    }
+
+    @media(max-width:900px){
+      .studio-name{font-size:32px}
+      .tagline{width:auto;white-space:normal;border:none;animation:none}
+    }
+/* TEAM SECTION */
+.team-section{
+  max-width:1200px;
+  margin:60px auto;
+  padding:0 20px;
+  text-align:center;
+}
+
+.team-title{
+  font-size:32px;
+  margin-bottom:30px;
+  font-weight:700;
+  color:#0f1724;
+}
+
+.team-container{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+}
+
+/* Card */
+.team-card{
+  width:260px;
+  background:#fff;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  transition:.4s;
+  cursor:pointer;
+  border:3px solid transparent;
+}
+
+/* Hover Animation */
+.team-card:hover{
+  transform:translateY(-12px) scale(1.03);
+  border-color:#ff4d4d;
+  box-shadow:0 18px 38px rgba(255,77,77,0.3);
+  background:linear-gradient(150deg,#fff,#ffe6e6);
+}
+
+/* Photo */
+.team-photo{
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:50%;
+  margin-bottom:15px;
+  border:4px solid #ff4d4d;
+  transition:.3s;
+}
+.team-card:hover .team-photo{
+  transform:scale(1.07);
+  filter:brightness(1.15);
+}
+
+/* Text */
+.team-name{
+  margin:8px 0 4px;
+  font-size:20px;
+  font-weight:700;
+}
+.team-role{
+  margin:0;
+  color:#666;
+  font-size:15px;
+}
+.team-phone{
+  margin:10px 0 14px;
+  font-weight:600;
+  color:#111;
+}
+
+/* Social Icons */
+.team-social{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+}
+.icon img{
+  width:32px;
+  height:32px;
+  transition:.3s;
+}
+
+/* Icon Hover */
+.icon:hover img{
+  transform:scale(1.22) rotate(8deg);
+  filter:drop-shadow(0 0 8px #ff4d4d);
+}
+
+/* WhatsApp Special Hover (green glow) */
+.icon.whatsapp:hover img{
+  filter:drop-shadow(0 0 10px #25D366);
+}
+
+/* Instagram Special Hover (pink glow) */
+.icon.insta:hover img{
+  filter:drop-shadow(0 0 10px #E1306C);
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .team-card{width:85%}
+}
+/* FOOTER */
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 50px 40px 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 230px;
+}
+
+.footer-section h2 {
+    color: #ff4d4d;
+    font-size: 28px;
+}
+
+.footer-section h3 {
+    color: #ff4d4d;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    color: #ccc;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 6px 0;
+    display: block;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ff4d4d;
+    transform: translateX(5px);
+}
+
+/* Social Icons */
+.social a {
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0 0;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .footer-container {
+        text-align: center;
+    }
+
+    .footer-section h2,
+    .footer-section h3 {
+        text-align: center;
+    }
+
+    .footer-section a,
+    .footer-section p {
+        text-align: center;
+    }
+}
+
+  @media(max-width:900px){
+.menu-icon{display:block;}
+#navLinks{
+position:absolute;
+top:70px;
+left:-100%;
+flex-direction:column;
+background:#fff;
+width:100%;
+text-align:center;
+padding:20px 0;
+transition:.3s;
+}
+#navLinks.show{left:0;}
+}
+
+@media(max-width:600px){
+.studio-name{font-size:32px;}
+.tagline{font-size:16px;}
+.service-card{width:100%;}
+.team-card{width:100%;}
+.footer-container{flex-direction:column;text-align:center;}
+}
+</style>
+
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+</head>
+<body>
+    <nav> 
+    <div class="logo">NTR Studio</div>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <ul id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ntr studio gallery.html">Gallery</a></li>
+        <li><a href="ntr studio machines.html">Machines</a></li>
+        <li><a href="ntr studio contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+ <!-- HERO -->
+  <section class="hero">
+    <div class="media">
+      <video autoplay muted loop playsinline>
+        <source src="v.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="studio-name">NTR STUDIO</h1>
+      <p class="tagline">Capturing Emotions, Not Just Photos…</p>
+
+      <a class="btn" href="ntr studiobutton.html">Explore Gallery 📸</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="below">
+    <h2>Our Services</h2>
+
+    <div class="services">
+      <div class="service-card">
+        <img src="" alt="">
+        <h4>Wedding Photography</h4>
+      </div>
+
+      <div class="service-card">
+        <img src="" alt="">
+        <h4>Baby Shoots</h4>
+      </div>
+
+      <div class="service-card">
+        <img src="" alt="">
+        <h4>Video Editing</h4>
+      </div>
+<br>
+      <div class="service-card">
+        <img src="" alt="">
+        <h4> Pre-wedding </h4>
+      </div>
+
+      <div class="service-card">
+        <img src="" alt="">
+      <h4>Events</h4>
+    </div>
+  </section>
+
+<script>
+  function toggleMenu(){
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+</script>
+<!-- TEAM SECTION -->
+<section class="team-section">
+  <h2 class="team-title">Our Creative Team</h2>
+
+  <div class="team-container">
+
+    <!-- MEMBER 1 -->
+    <div class="team-card">
+      <img src="d:\photos\Family\1000001521.jpg" class="team-photo" alt="">
+      <h3 class="team-name">PratapBhai Bhusadiya</h3>
+      <br>
+      <p class="team-role">Photographer</p>
+      <br>
+      <p class="team-phone">📞 +91 9913622760</p>
+
+      <!-- <div class="team-social">
+        <a href="https://wa.me/919876543210" class="icon whatsapp" target="_blank">
+          <img src="whatsapp.png">
+        </a>
+
+        <a href="https://instagram.com/yourid" class="icon insta" target="_blank">
+          <img src="instagram.png">
+        </a>
+      </div> -->
+    </div>
+
+    <!-- MEMBER 2 -->
+    <div class="team-card">
+      <img src="Bhai.jpg" class="team-photo" alt="">
+      <h3 class="team-name">PrakashBhai Bavaliya</h3>
+      <br>
+      <p class="team-role">Video Editor</p>
+      <br>
+      <p class="team-phone">📞 +91 7046221618</p>
+
+      <!-- <div class="team-social">
+        <a href="https://wa.me/919123456780" class="icon whatsapp" target="_blank">
+          <img src="whatsapp.png">
+        </a>
+
+        <a href="" class="icon insta" target="_blank">
+          <img src="instagram.png">
+        </a>
+      </div> -->
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<br><br>
+<div class="center-btn">
+    <a href="index.html" class="back-home">← Back Home</a>
+</div>
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2>NTR STUDIO</h2>
+            <p>Professional photography, videography & editing studio with premium equipment and a talented team.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="ntr studio home.html">Home</a>
+            <a href="ntr studio gallery.html">Gallery</a>
+            <a href="ntr studio machines.html">Machines</a>
+            <a href="ntr studio contact.html">Contact</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>📞  +91 9913622760</p>
+            <p>📍  NTR Studio, limdi, surendranagar, Gujarat</p>
+            <p>✉️  info@ntrstudio.com</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social">
+                <a href="#">📷 Instagram</a>
+                <a href="https://youtube.com/@studiontr6308?si=7VKHPAFj_lfA0hMf" target="_blank">🎥 YouTube</a>
+                <a href="#">📘 Facebook</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 NTR Studio | All rights reserved.
+    </div>
+
+</footer>
+
+
+
+
+</body>
+</html>

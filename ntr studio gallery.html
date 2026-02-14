@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        /* NAVBAR MAIN */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* LOGO */
+nav .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff4d4d;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* NAV LINKS */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff4d4d;
+}
+
+/* HAMBURGER ICON */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff4d4d;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+
+    nav {
+        padding: 18px 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+*{
+            font-family: 'Poppins', sans-serif;
+        }
+    /* Center Wrapper */
+.center-btn {
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Original Button Style */
+.back-home {
+    display: inline-block;
+    padding: 12px 25px;
+    background:  #ff4d4d;;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.back-home:hover {
+    background: #ff4d4d;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .back-home {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+:root{
+    --accent:#ff4d4d;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Poppins",sans-serif;background:#f5f5f5;color:#111}
+
+  .section {
+    max-width:1100px;
+    margin:40px auto;
+    padding:0 20px;
+  }
+
+  h2.section-title {
+    text-align:center;
+    margin-bottom:24px;
+    font-size:26px;
+    color:var(--accent);
+  }
+
+  /* Row with exactly 3 cards */
+  .three-row {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:18px;
+    align-items:start;
+  }
+
+  .card {
+    position:relative;
+    overflow:hidden;
+    border-radius:12px;
+    background:#fff;
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    cursor:pointer;
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+
+  .card img {
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+    transition:transform .45s ease, filter .35s ease;
+  }
+
+  /* overlay layer (color will vary by class) */
+  .overlay {
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.25));
+    mix-blend-mode: multiply;
+    transition: background .35s ease, opacity .35s ease;
+    pointer-events:none;
+  }
+
+  /* three different hover colors */
+  .card.red .overlay { background: linear-gradient(180deg, rgba(255,77,77,0.00), rgba(255,77,77,0.18)); }
+  .card.green .overlay { background: linear-gradient(180deg, rgba(37,211,102,0.00), rgba(37,211,102,0.12)); }
+  .card.blue .overlay { background: linear-gradient(180deg, rgba(59,130,246,0.00), rgba(59,130,246,0.14)); }
+
+  /* caption that appears on hover */
+  .caption {
+    position:absolute;
+    left:16px;
+    right:16px;
+    bottom:14px;
+    color:#fff;
+    font-weight:700;
+    font-size:18px;
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity .32s ease, transform .32s ease;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  }
+
+  /* hover effects */
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow:0 22px 48px rgba(0,0,0,0.18);
+  }
+  .card:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.03);
+  }
+  .card:hover .overlay {
+    opacity:1;
+  }
+  .card:hover .caption {
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* small subtle border inside */
+  .card .meta {
+    position:absolute;
+    top:12px;
+    left:12px;
+    background: rgba(255,255,255,0.06);
+    color:#fff;
+    padding:6px 10px;
+    border-radius:999px;
+    font-size:13px;
+    backdrop-filter: blur(4px);
+    opacity:0.95;
+  }
+
+  /* Responsive: stack single column on small screens */
+  @media (max-width:900px){
+    .three-row { grid-template-columns: 1fr; }
+    .card img { height: 320px; }
+  }
+
+  /* ---------- Footer (same as your home page) ---------- */
+  .footer {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 50px 40px 20px;
+      margin-top: 50px;
+  }
+
+  .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+  }
+
+  .footer-section {
+      flex: 1;
+      min-width: 230px;
+  }
+
+  .footer-section h2 {
+      color: #ff4d4d;
+      font-size: 28px;
+  }
+
+  .footer-section h3 {
+      color: #ff4d4d;
+      font-size: 20px;
+      margin-bottom: 10px;
+  }
+
+  .footer-section p,
+  .footer-section a {
+      color: #ccc;
+      font-size: 15px;
+      text-decoration: none;
+      margin: 6px 0;
+      display: block;
+  }
+
+  .footer-section a:hover {
+      color: #ff4d4d;
+      transform: translateX(5px);
+  }
+
+  .footer-bottom {
+      text-align: center;
+      padding: 15px 0 0;
+      margin-top: 20px;
+      border-top: 1px solid #333;
+      color: #bbb;
+      font-size: 14px;
+  }
+
+  @media(max-width: 900px) {
+      .footer-container {
+          text-align: center;
+      }
+
+      .footer-section h2,
+      .footer-section h3 {
+          text-align: center;
+      }
+
+      .footer-section a,
+      .footer-section p {
+          text-align: center;
+      }
+  }
+  /* GALLERY WRAPPER */
+.three-gallery{
+    width: 90%;
+    max-width: 1100px;
+    margin: 70px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+/* CARD */
+.g-item{
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.9s ease forwards;
+}
+
+/* IMAGE */
+.g-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+/* HOVER ZOOM + DARK */
+.g-item:hover img{
+    transform: scale(1.12);
+    filter: brightness(0.75);
+}
+
+/* FADE-UP ANIMATION */
+@keyframes fadeUp{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px){
+    .three-gallery{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px){
+    .three-gallery{
+        grid-template-columns: 1fr;
+    }
+}
+.g-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* FULL image without cropping */
+    background: #000;      /* black background around image */
+    transition: 0.4s;
+}
+
+.three-gallery {
+    display: flex;
+    gap: 20px;
+    padding: 40px;
+}
+
+.g-item {
+    flex: 1;                     /* 3 images same width */
+    height: 320px;               /* FIX HEIGHT → all same size */
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.g-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* Perfect crop → no background */
+    transition: 0.4s ease;
+}
+
+/* Hover Animation */
+.g-item:hover img {
+    transform: scale(1.08);      /* Zoom animation */
+    filter: brightness(0.85);    /* Light dark effect */
+}
+/* ===== RESPONSIVE FIX ===== */
+@media(max-width:900px){
+
+.three-row{
+grid-template-columns:1fr 1fr;
+}
+
+.three-gallery{
+flex-wrap:wrap;
+}
+
+.g-item{
+flex:1 1 calc(50% - 20px);
+height:260px;
+}
+
+}
+
+@media(max-width:600px){
+
+.three-row{
+grid-template-columns:1fr;
+}
+
+.g-item{
+flex:1 1 100%;
+height:240px;
+}
+
+.section-title{
+font-size:22px;
+}
+
+}
+
+/* ===== IMAGE STYLE IMPROVE ===== */
+.card img,
+.g-item img{
+border-radius:14px;
+transition:transform .5s cubic-bezier(.22,.61,.36,1),
+filter .4s ease,
+box-shadow .4s ease;
+}
+
+/* Hover Animation Upgrade */
+.card:hover img,
+.g-item:hover img{
+transform:scale(1.12) rotate(.5deg);
+filter:brightness(.9) contrast(1.05);
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+/* Smooth Card Hover */
+.card,
+.g-item{
+transition:transform .45s ease, box-shadow .45s ease;
+}
+
+.card:hover,
+.g-item:hover{
+transform:translateY(-12px);
+box-shadow:0 25px 55px rgba(0,0,0,.25);
+}
+
+/* Glass Overlay Glow */
+.card .overlay{
+backdrop-filter: blur(2px);
+opacity:.7;
+transition:.4s;
+}
+
+.card:hover .overlay{
+opacity:1;
+}
+
+/* Smooth Fade Load Animation */
+.g-item{
+animation:fadeUp 1s ease both;
+}
+
+
+</style>
+
+       
+</head>
+<body>
+    <nav> 
+    <div class="logo">NTR Studio</div>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <ul id="navLinks">
+        <li><a href="ntr studio home.html">Home</a></li>
+        <li><a href="ntr studio gallery.html">Gallery</a></li>
+        <li><a href="ntr studio machines.html">Machines</a></li>
+        <li><a href="ntr studio contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+</script>
+
+<!-- example top nav (optional) -->
+ 
+
+  <section class="section">
+    <h2 class="section-title">Featured Photos</h2>
+
+    <div class="three-row">
+      <!-- CARD 1: red overlay on hover -->
+      <div class="card red">
+        <img src="d:\photos\1000008568.jpg" alt="Photo A">
+        <div class="overlay"></div>
+        <div class="meta">Wedding</div>
+        <!-- <div class="caption">Royal Wedding Moments</div> -->
+      </div>
+
+      <!-- CARD 2: green overlay on hover -->
+      <div class="card green">
+        <img src="mummyy.jpg" alt="Photo B">
+        <div class="overlay"></div>
+        <!-- <div class="meta">Baby</div> -->
+        <!-- <div class="caption">Candid Smiles</div> -->
+      </div>
+
+      <!-- CARD 3: blue overlay on hover -->
+      <div class="card blue">
+        <img src="Rina.jpg" alt="Photo C">
+        <div class="overlay"></div>
+        <!-- <div class="meta">Outdoor</div> -->
+        <!-- <div class="caption">Golden Hour Portrait</div> -->
+      </div>
+    </div>
+  </section>
+  
+  <section class="three-gallery">
+
+    <div class="g-item">
+        <img src="ntrimg5.jpeg" alt="">
+    </div>
+
+    <div class="g-item">
+        <img src="ntrimg7.jpeg" alt="">
+    </div>
+
+    <div class="g-item">
+        <img src="ntrimg6.jpeg" alt="">
+    </div>
+      <div class="g-item">
+        <img src="NTRIMG9.jpeg" alt="">
+    </div>
+
+</section>
+
+<section class="three-gallery">
+
+    <div class="g-item">
+        <img src="ntrimg1.jpg" alt="">
+    </div>
+
+    <div class="g-item">
+        <img src="ntrimg2.jpg" alt="">
+    </div>
+
+    <div class="g-item">
+        <img src="ntrimg3.jpg" alt="">
+    </div>
+      <div class="g-item">
+        <img src="ntrimg4.jpg" alt="">
+    </div>
+
+</section>
+
+<br><br>
+<div class="center-btn">
+    <a href="index.html" class="back-home">← Back Home</a>
+</div>
+  <!-- FOOTER (same as home page) -->
+  <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-section">
+              <h2>NTR STUDIO</h2>
+              <p>Professional photography, videography & editing studio with premium equipment and a talented team.</p>
+          </div>
+
+          <div class="footer-section">
+              <h3>Quick Links</h3>
+              <a href="index.html">Home</a>
+              <a href="ntr studio gallery.html">Gallery</a>
+              <a href="ntr studio machines.html">Machines</a>
+              <a href="ntr studio contact.html">Contact</a>
+          </div>
+
+          <div class="footer-section">
+              <h3>Contact Info</h3>
+              <p>📞 +91 9913622760</p>
+              <p>📍 NTR Studio, Limdi, Surendranagar, Gujarat</p>
+              <p>✉️ info@ntrstudio.com</p>
+          </div>
+
+          <div class="footer-section">
+              <h3>Follow Us</h3>
+              <a href="#">📷 Instagram</a>
+              <a href="https://youtube.com/@studiontr6308?si=7VKHPAFj_lfA0hMf" target="_blank">🎥 YouTube</a>
+              <a href="#">📘 Facebook</a>
+          </div>
+      </div>
+
+      <div class="footer-bottom">
+          © 2025 NTR Studio | All rights reserved.
+      </div>
+  </footer>
+
+
+
+
+
+
+</body>
+</html>

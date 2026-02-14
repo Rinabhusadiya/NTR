@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Studio Home</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4XRFN9ZSZB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4XRFN9ZSZB');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: #f5f5f5;
+    }
+
+    /* NAVBAR */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background: white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    nav .logo {
+        font-size: 26px;
+        font-weight: 600;
+        color: #ff4d4d;
+    }
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+    nav ul li a:hover {
+        color: #ff4d4d;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 40px;
+        flex-wrap: wrap;
+    }
+
+    .hero-text {
+        flex: 1;
+        min-width: 300px;
+        animation: slideRight 1s ease forwards;
+        opacity: 0;
+    }
+    .hero-text h1 {
+        font-size: 48px;
+        margin: 0;
+    }
+    .hero-text p {
+        font-size: 18px;
+        color: #444;
+        margin: 20px 0;
+    }
+    .hero-text button {
+        background: #ff4d4d;
+        border: none;
+        padding: 14px 30px;
+        color: white;
+        font-size: 16px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .hero-text button:hover {
+        background: #e03a3a;
+    }
+
+    /* ROUND IMAGE */
+    .hero-img {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+        animation: slideLeft 1s ease forwards;
+        opacity: 0;
+    }
+    .hero-img img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 8px solid white;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        transition: 0.4s ease;
+    }
+    .hero-img img:hover {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+    }
+
+    /* ===== STUDIO MACHINE SECTION ===== */
+    .machines {
+        padding: 60px 40px;
+        text-align: center;
+    }
+    .machines h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .machine-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+    }
+    .machine-box {
+        background: white;
+        width: 250px;
+        padding: 18px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: 0.4s ease;
+        animation: fadeIn 1s ease forwards;
+        opacity: 0;
+    }
+    .machine-box img {
+        width: 100%;
+        border-radius: 14px;
+        height: 160px;
+        object-fit: cover;
+    }
+    .machine-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    .machine-box h3 {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    /* ===== TEAM SECTION ===== */
+    .team {
+        padding: 60px 40px;
+        text-align: center;
+    }
+    .team h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .team-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+    }
+    .team-card {
+        width: 200px;
+        text-align: center;
+        animation: fadeIn 1s ease forwards;
+        opacity: 0;
+    }
+    .team-card img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 6px solid white;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        transition: 0.4s ease;
+    }
+    .team-card img:hover {
+        transform: scale(1.08) rotate(3deg);
+    }
+    .team-card h3 {
+        margin: 12px 0 5px 0;
+        font-size: 18px;
+    }
+
+    /* ANIMATIONS */
+    @keyframes slideLeft {
+        from { transform: translateX(80px); opacity: 0; }
+        to   { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideRight {
+        from { transform: translateX(-80px); opacity: 0; }
+        to   { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(40px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 900px) {
+        .hero {
+            text-align: center;
+        }
+        .hero-text h1 {
+            font-size: 36px;
+        }
+        .hero-img img {
+            width: 250px;
+            height: 250px;
+        }
+    }
+    a {
+    text-decoration: none;
+}
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* HAMBURGER BUTTON */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff4d4d;
+}
+
+/* NAV LINKS */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff4d4d;
+}
+
+/* ============ MOBILE VIEW ============ */
+@media (max-width: 900px) {
+
+    nav {
+        padding: 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+}
+nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* MOBILE MODE */
+        @media (max-width: 900px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                padding: 20px;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+        /* FOOTER */
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 50px 40px 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 230px;
+}
+
+.footer-section h2 {
+    color: #ff4d4d;
+    font-size: 28px;
+}
+
+.footer-section h3 {
+    color: #ff4d4d;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    color: #ccc;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 6px 0;
+    display: block;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ff4d4d;
+    transform: translateX(5px);
+}
+
+/* Social Icons */
+.social a {
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0 0;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .footer-container {
+        text-align: center;
+    }
+
+    .footer-section h2,
+    .footer-section h3 {
+        text-align: center;
+    }
+
+    .footer-section a,
+    .footer-section p {
+        text-align: center;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<!-- <nav>
+    <div class="logo">My Studio</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Machines</a></li>
+         <li><a href="#">Team</a></li> -->
+        <!-- <li><a href="#">Booking</a></li>
+    </ul>
+</nav> -->
+<nav> 
+    <h2> NTR STUDIO</h2>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <ul id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ntr studio gallery.html">Gallery</a></li>
+        <li><a href="ntr studio machines.html">Machines</a></li>
+        <li><a href="ntr studio contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>PROFESSIONAL PHOTOGRAPHY SERVICE</h1>
+        <p>Professional studio with top-class equipment and a talented team.</p>
+<div class="gallery-box">
+    <!-- <img id="mainPhoto" src="photo1.jpg" alt="Studio Photo"> -->
+
+    <button class="like-btn" onclick="nextPhoto()">
+      <a href="ntr studiobutton.html"> Explore Gallery</a>
+    </button>
+</div>   
+ </div>
+ <br><br>
+
+    <div class="hero-img">
+        <img src="NTR.jpg">
+    </div>
+</section>
+
+<!-- STUDIO MACHINES -->
+<section class="machines">
+    <h2>Our Studio Equipment</h2>
+<br>
+    <div class="machine-grid">
+        <div class="machine-box">
+            <img src="ntr1.jpg">
+            <h3>4K DSLR Camera</h3>
+        </div>
+
+        <div class="machine-box">
+            <img src="bit.jpg">
+            <h3>Lighting Setup</h3>
+        </div>
+
+        <div class="machine-box">
+            <img src="dron.jpg">
+            <h3>Drone Camera</h3>
+        </div>
+
+        <div class="machine-box">
+            <img src="editing.jpg">
+            <h3>Editing System</h3>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section class="team">
+    <h2>Our Team</h2>
+<br><br>
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="d:\photos\Family\1000001521.jpg">
+            <h3>Pratap Bhai</h3>
+            <!-- <p>Photographer</p> -->
+        </div>
+
+        <div class="team-card">
+            <img src="Bhai.jpg">
+            <h3>PrakashBhai</h3>
+            <!-- <p>Editor</p> -->
+        </div>
+
+        <div class="team-card">
+            <img src="d:\photos\IMG_20241109_225426_139.webp">
+            <h3>Rajkumar</h3>
+        </div>
+        <div class="team-card">
+            <img src="aadi2.jpeg">
+            <h3>Aadi</h3>
+        </div>
+    </div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2>NTR STUDIO</h2>
+            <p>Professional photography, videography & editing studio with premium equipment and a talented team.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="ntr studio home.html">Home</a>
+            <a href="ntr studio gallery.html">Gallery</a>
+            <a href="ntr studio machines.html">Machines</a>
+            <a href="ntr studio contact.html">Contact</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>📞  +91 9913622760</p>
+            <p>📍  NTR Studio,limdi,surendranagar, Gujarat</p>
+            <p>✉️  info@ntrstudio.com</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social">
+                <a href="#">📷 Instagram</a>
+                <a href="https://youtube.com/@studiontr6308?si=7VKHPAFj_lfA0hMf" target="_blank">🎥 YouTube</a>
+                <a href="#">📘 Facebook</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 NTR Studio | All rights reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* NAVBAR MAIN */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* LOGO */
+nav .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff4d4d;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* NAV LINKS */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff4d4d;
+}
+
+/* HAMBURGER ICON */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff4d4d;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+
+    nav {
+        padding: 18px 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+*{
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Center Wrapper */
+.center-btn {
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Original Button Style */
+.back-home {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ff4d4d;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.back-home:hover {
+    background: #ff4d4d;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .back-home {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+.video-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Dark overlay for text clarity */
+.video-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.video-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.video-content h1 {
+    font-size: 55px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.video-btn {
+    background: #ff4d4d;
+    padding: 15px 35px;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.video-btn:hover {
+    background: #e63b3b;
+    transform: scale(1.08);
+}
+
+/* Mobile responsive */
+@media(max-width: 768px){
+    .video-content h1{
+        font-size: 32px;
+    }
+}
+.card-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 80px 40px;
+    background: #f4f4f4;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 280px;
+    height: 360px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transition: 0.5s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s ease;
+}
+
+.card-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 22px;
+    transform: translateY(100%);
+    transition: 0.5s ease;
+}
+
+/* HOVER EFFECT */
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card:hover .card-text {
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-12px);
+}
+
+/* Mobile responsive */
+@media(max-width: 900px){
+    .card-section {
+        padding: 50px 20px;
+    }
+}
+/* FOOTER */
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 50px 40px 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 230px;
+}
+
+.footer-section h2 {
+    color: #ff4d4d;
+    font-size: 28px;
+}
+
+.footer-section h3 {
+    color: #ff4d4d;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    color: #ccc;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 6px 0;
+    display: block;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ff4d4d;
+    transform: translateX(5px);
+}
+
+/* Social Icons */
+.social a {
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0 0;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .footer-container {
+        text-align: center;
+    }
+
+    .footer-section h2,
+    .footer-section h3 {
+        text-align: center;
+    }
+
+    .footer-section a,
+    .footer-section p {
+        text-align: center;
+    }
+}
+
+
+/* ========= RESPONSIVE IMPROVEMENTS ========= */
+
+/* Tablet */
+@media(max-width:992px){
+
+.card{
+width:45%;
+height:320px;
+}
+
+.video-content h1{
+font-size:40px;
+}
+
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+nav{
+padding:16px 18px;
+}
+
+nav ul{
+top:65px;
+}
+
+.card-section{
+gap:20px;
+}
+
+.card{
+width:100%;
+height:280px;
+}
+
+.video-content h1{
+font-size:28px;
+}
+
+.video-btn{
+padding:12px 26px;
+font-size:16px;
+}
+
+.footer{
+padding:40px 20px;
+}
+
+.footer-container{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
+/* ========= PREMIUM HOVER ANIMATION ========= */
+.card img{
+transition:transform .7s cubic-bezier(.22,.61,.36,1),
+filter .5s ease,
+box-shadow .5s ease;
+}
+
+.card:hover img{
+transform:scale(1.15) rotate(.5deg);
+filter:brightness(.9) contrast(1.05);
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+
+/* Floating card animation */
+.card{
+transition:transform .5s ease, box-shadow .5s ease;
+}
+
+.card:hover{
+transform:translateY(-16px);
+box-shadow:0 30px 70px rgba(0,0,0,.35);
+}
+
+/* Smooth fade load */
+.card{
+opacity:0;
+animation:fadeUp .9s ease forwards;
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* delay animation for each row */
+.card:nth-child(2){animation-delay:.15s;}
+.card:nth-child(3){animation-delay:.3s;}
+.card:nth-child(4){animation-delay:.45s;}
+.card:nth-child(5){animation-delay:.6s;}
+.card:nth-child(6){animation-delay:.75s;}
+
+    
+    </style>
+</head>
+<body>
+    <nav> 
+    <div class="logo">NTR Studio</div>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <ul id="navLinks">
+       <li><a href="index.html">Home</a></li>
+        <li><a href="ntr studio gallery.html">Gallery</a></li>
+        <li><a href="ntr studio machines.html">Machines</a></li>
+        <li><a href="ntr studio contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+<section class="video-hero">
+
+    <video autoplay muted loop playsinline>
+        <source src="c:\Users\FX\Downloads\3936483-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-content">
+        <h1>DIGITAL PRINTING MACHINE</h1>
+        <a href="ntr studio machines.html" class="video-btn">View Machines</a>
+    </div>
+
+</section>
+
+<section class="card-section">
+
+    <div class="card">
+        <img src="ntrimg10.avif">
+        <div class="card-text">Flex Printing</div>
+    </div>
+
+    <div class="card">
+        <img src="TM-5250 img.jpg">
+        <div class="card-text">CANONr</div>
+    </div>
+
+    <div class="card">
+        <img src="ntr1.jpg">
+        <div class="card-text">Photo Printing</div>
+    </div>
+
+</section>
+
+<section class="card-section">
+
+    <div class="card">
+        <img src="canon 2.jpg">
+        <div class="card-text">CANON</div>
+    </div>
+
+    <div class="card">
+        <img src="canon 1.jpg">
+        <div class="card-text">CANON</div>
+    </div>
+
+    <div class="card">
+        <img src="canon3.jpg">
+        <div class="card-text">CANON</div>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+<br><br>
+<div class="center-btn">
+    <a href="index.html" class="back-home">← Back Home</a>
+</div>
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2>NTR STUDIO</h2>
+            <p>Professional photography, videography & editing studio with premium equipment and a talented team.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="ntr studio home.html">Home</a>
+            <a href="ntr studio gallery.html">Gallery</a>
+            <a href="ntr studio machines.html">Machines</a>
+            <a href="ntr studio contact.html">Contact</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>📞  +91 9913622760</p>
+            <p>📍  NTR Studio,limdi,surendranagar, Gujarat</p>
+            <p>✉️  info@ntrstudio.com</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social">
+                <a href="#">📷 Instagram</a>
+                <!-- <a href="https://instagram.com" target="_blank"></a> -->
+                <a href="https://youtube.com/@studiontr6308?si=7VKHPAFj_lfA0hMf" target="_blank">🎥 YouTube</a>
+                <a href="#">📘 Facebook</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 NTR Studio | All rights reserved.
+    </div>
+
+</footer>
+
+
+
+
+
+</body>
+</html>

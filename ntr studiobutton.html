@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Studio Gallery Grid</title>
+
+<style>
+body {
+    font-family: Poppins, sans-serif;
+    padding: 40px;
+    background: #fafafa;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Remove underline from all links */
+a {
+    text-decoration: none;
+}
+
+/* --- GALLERY GRID --- */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Each image card */
+.card {
+    background: #fff;
+    padding: 35px;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: .4s;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* Round Image */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: .4s;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+/* Title under image */
+.card-title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}.center-btn {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.back-home {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #ff4d4d;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Hover Animation (same as your others) */
+.back-home:hover {
+    background: #e03a3a;
+    transform: scale(1.08);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+/* ---------- MOBILE RESPONSIVE FIX ---------- */
+@media (max-width: 768px) {
+
+    body{
+        padding:20px;
+    }
+
+    h1{
+        font-size:22px;
+    }
+
+    .gallery-container{
+        gap:15px;
+    }
+
+    .card{
+        padding:20px;
+        border-radius:14px;
+    }
+
+    .card img{
+        height:180px;
+        border-radius:12px;
+    }
+
+    .back-home{
+        font-size:16px;
+        padding:12px 24px;
+    }
+}
+
+
+/* ---------- EXTRA SMALL DEVICES ---------- */
+@media (max-width:480px){
+
+    .gallery-container{
+        grid-template-columns:1fr;
+    }
+
+    .card img{
+        height:200px;
+    }
+
+    h1{
+        font-size:20px;
+    }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<h1>Our Studio Gallery</h1>
+
+<!-- ------------------- GALLERY GRID ------------------- -->
+<div class="gallery-container">
+
+    <div class="card">
+        <img src="aadi.jpeg">
+        <!-- <div class="card-title">Camera Setup</div> -->
+    </div>
+
+    <div class="card">
+        <img src="pako bhai.jpeg">
+        <!-- <div class="card-title">Editing Room</div> -->
+    </div>
+
+    <div class="card">
+        <img src="rajkumar.jpeg">
+        <!-- <div class="card-title">Lighting Setup</div> -->
+    </div>
+
+    <div class="card">
+        <img src="PAPA2.jpeg">
+        <!-- <div class="card-title">Green Screen Area</div> -->
+    </div>
+
+    <div class="card">
+        <img src="Rina.jpg">
+        <!-- <div class="card-title">Studio Team</div> -->
+    </div>
+
+    <div class="card">
+        <img src="mummyy.jpg">
+        <!-- <div class="card-title">Makeup Room</div> -->
+    </div>
+
+    <div class="card">
+        <img src="ntrimg8.jpeg">
+        <!-- <div class="card-title">Makeup Room</div> -->
+    </div>
+    <div class="card">
+        <img src="aadi2.jpeg">
+        <!-- <div class="card-title">Makeup Room</div> -->
+    </div>
+</div>
+
+<br><br>
+<div class="center-btn">
+    <a href="index.html" class="back-home">← Back Home</a>
+</div>
+
+</body>
+</html>
